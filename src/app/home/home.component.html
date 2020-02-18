@@ -1,0 +1,12 @@
+<div class="jumbotron">
+    <div *ngIf="authService.authenticated; then welcomeUser else signInPrompt"></div>
+    <ng-template #welcomeUser>
+     
+        <a routerLink="/customer-list" class="nav-link" routerLinkActive="active">Continue...</a> 
+     
+      <!-- <h4 *ngIf="authService.user">Welcome {{ authService.user.displayName }}!</h4> -->
+    </ng-template>
+    <ng-template #signInPrompt>
+      <a href="javascript:undefined" class="btn btn-primary btn-large" role="button" (click)="signIn()">Click here to sign in</a>
+    </ng-template>
+  </div>
